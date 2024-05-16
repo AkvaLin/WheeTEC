@@ -1,0 +1,23 @@
+<html lang="en">
+<%- include('./partials/header.ejs') %>
+<body>
+
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="container__data">
+        <ul>
+            <% for(var i = 0; i < cart.length; i++) { %>
+                <li class="<%- cart[i]['id'] %>">
+                    <div class="li">
+                        <p class="text body uppercase"><%- cart[i]['name'] %></p>
+                        <input type="button" value="Remove" class="button remove" id="<%- cart[i]['id'] %>">
+                    </div>
+                </li>
+            <% } %>
+        </ul>
+        <input type="button" value="Order" class="button" id="order">
+    </div>
+
+</body>
+<script src="/scripts/cart.js" type="text/javascript"></script>
+</html>

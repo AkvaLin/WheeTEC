@@ -1,0 +1,35 @@
+<html lang="en">
+<%- include('./partials/header.ejs') %>
+<body>
+
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="container__data">
+        <p class="text subtitle">FAQ</p>
+        <div class="container__data-faq">
+            <% for(var i = 0; i < faq.length; i++) { %>
+                <div class="container__data-faq-item">
+                    <div class="container_data-faq-item-arrow">
+                        <%- arrowImg %>
+                    </div>
+                    <p class="text body container_data-faq-item-title"><%- faq[i]['title'] %></p>
+                    <div class="container_data-faq-item-divider"></div>
+                    <p class="text caption container_data-faq-item-body"><%- faq[i]['body'] %></p>
+                </div>
+              <% } %>
+        </div>
+        <p class="text subtitle">Contact Us</p>
+        <div class="container__data-contact-from">
+            <p class="text body" id="nameTitle">Name</p>
+            <p class="text body" id="messageTitle">Message</p>
+            <p class="text body" id="emailTitle">Email</p>
+            <input type="text" class="container__data-contact-from-input" id="nameField" placeholder="Jack Morrison">
+            <input type="text" class="container__data-contact-from-input" id="emailField" placeholder="jack@email.com">
+            <textarea class="container__data-contact-from-input" id="messageField" placeholder="Hello! I've question about..."></textarea>
+        </div>
+        <input type="button" class="container__data-contact-from-button button" value="Send">
+    </div>
+
+</body>
+<script src="/scripts/support.js" type="text/javascript"></script>
+</html>

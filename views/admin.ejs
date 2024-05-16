@@ -1,0 +1,49 @@
+<html lang="en">
+<%- include('./partials/header.ejs') %>
+<body>
+
+    <div class="body-container" id="login">
+        <div class="container__data">
+            <input type="text" class="container__data-contact-from-input" placeholder="Login" id="loginField">
+            <input type="password" class="container__data-contact-from-input" placeholder="Password" id="passwordField">
+            <input type="button" class="button" value="Sign in" id="signInButton">
+        </div>
+    </div>
+
+    <div class="body-container" id="nav">
+        <div class="container__data">
+            <input type="button" class="button" value="Admins">
+            <input type="button" class="button" value="FAQ">
+            <input type="button" class="button" value="Orders">
+            <input type="button" class="button" value="Products">
+            <input type="button" class="button" value="Support">
+            <input type="button" class="secondaryButton" value="Exit" id="exit-button">
+        </div>
+    </div>
+
+    <div class="body-container" id="action">
+        <div class="container__data">
+            <p class="text subtitle" id="category"></p>
+            <input type="button" class="button" value="Show">
+            <input type="button" class="button" value="Add">
+            <input type="button" class="button" value="Update">
+            <input type="button" class="button" value="Delete">
+            <input type="button" class="secondaryButton" value="Return" id="category-return">
+        </div>
+    </div>
+
+    <div class="container__data" id="data">
+        <table id="data__table">
+            <thead></thead>
+            <tbody></tbody>
+        </table>
+        <form id="data__form"></form>
+        <div id="data__container" class="container__data-update">
+
+        </div>
+        <input type="button" class="secondaryButton" value="Return" id="data-return">
+    </div>
+
+</body>
+<script src="/scripts/admin.js" type="text/javascript"></script>
+</html>

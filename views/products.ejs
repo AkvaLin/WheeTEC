@@ -1,0 +1,50 @@
+<html lang="en">
+<%- include('./partials/header.ejs') %>
+<body>
+
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="container__data" id="products">
+
+        <select name="type">
+            <option value="all">All</option>
+            <option value="formula">Formula</option>
+            <option value="gt">GT</option>
+        </select>
+
+        <div class="container__data-products">
+            <% for(var i = 0; i < products.length; i++) { %>
+                <div class="container__data-products-item" id="<%- products[i]['id'] %>" type="<%- products[i]['type'] %>">
+                    <div class="container__data-products-item-image">
+                        <img class="container__image container_data-products-item-icon" src=<%- products[i]['image'] %>>
+                    </div>
+                    <p class="text body container__data-products-item-text"><%- products[i]['name'] %></p>
+                </div>
+            <% } %>
+        </div>
+    </div>
+
+    <dialog class="modal" id="product">
+        <div class="modal__container">
+            <input type="button" class="secondaryButton" value="Close" id="close">
+            <div class="modal__container-data">
+                <p class="text subtitle container__data-products-item-text" id="product_title"></p>
+                <img class="container__image container_data-products-item-icon" id="product_image">
+                <p class="text subtitle container__data-products-item-text" id="product_price"></p>
+                <input type="button" class="button" value="Add to cart" id="product_cart">
+                <textarea class="text caption" id="product_description" readonly="readonly" unselectable="on"></textarea>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="modal modal__alert" id="success">
+        <div class="modal__container">
+            <p class="text caption">The product has been successfully added to cart</p>
+            <input type="button" class="button" value="Continue shopping" id="continue">
+            <input type="button" class="secondaryButton" value="Go to cart" id="cart">
+        </div>
+    </dialog>
+
+</body>
+<script src="/scripts/products.js" type="text/javascript"></script>
+</html>

@@ -1,0 +1,28 @@
+<html lang="en">
+<%- include('./partials/header.ejs') %>
+<body>
+
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="container__data" id="products">
+
+        <p class="text subtitle">Orders</p>
+
+        <div class="container__data-products">
+            <% for(var i = 0; i < orders.length; i++) { %>
+                <div class="container__data-products-item container__data-products-item-image modal__container">
+                    <p class="text caption"><%- orders[i]['id'] %></p>
+                    <div class="container__data-update-item grow">
+                        <% for(var j = 0; j < orders[i]['name'].length; j++) { %>
+                            <p class="text body"><%- orders[i]['name'][j] %></p>
+                        <%}%>
+                    </div>
+                    <input type="button" class="button cancel" value="Cancel" id=<%- orders[i]['id'] %>>
+                </div>
+            <%}%>
+        </div>
+    </div>
+
+</body>
+<script src="/scripts/profile.js" type="text/javascript"></script>
+</html>
